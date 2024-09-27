@@ -1,5 +1,7 @@
 #include <string>
+#include <fstream>
 
+const int TREE_NODES_NUMBER = 128;
 
 struct Node
 {
@@ -13,3 +15,14 @@ struct Node
         left{nullptr}, right{nullptr} {}
 };
 
+class Huffman_compressor {
+private:
+    Node* node_array[TREE_NODES_NUMBER];
+    std::ifstream in_file;
+    std::ofstream out_file;
+    
+    void create_node_array();
+
+
+
+};
