@@ -10,12 +10,14 @@ class Node
 public:
     unsigned char character;
     float frequency;
-    std::string code;
+    std::string code; // not sure if this field if necessary
     Node* left;
     Node* right;
 
     Node(unsigned char ch = 0, int freq = 0) : character{ch}, frequency{freq},
         left{nullptr}, right{nullptr} {}
+
+    
 };
 
 class Huffman_compressor {
@@ -42,8 +44,16 @@ private:
         }
     }
 
+    Node* create_node(char ch, int freq, Node* left, Node* right)
+    {
+        Node* node = new Node;
+        node->character = ch;
+        node->frequency = freq;
+        node->left = left;
+        node->right = right;
 
-    void create_node_array();
+        return node;
+    }
 
 
 public:
